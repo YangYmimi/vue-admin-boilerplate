@@ -5,6 +5,8 @@
 ## Project Structure
 
 ```
+|-- public
+  |-- vendor 利用 `vendor-update.js` 更新的 cdn 路径
 |-- src
   |-- apis 接口文件
   |-- assets 资源文件, 按照类型不同划分, images、fonts等等
