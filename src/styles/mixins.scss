@@ -1,0 +1,12 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 字体定位
+// tx-center, tx-left, tx-right
+@each $position in center, left, right {
+  .tx-#{$position} {
+    text-align: #{$position} !important;
+  }
+}

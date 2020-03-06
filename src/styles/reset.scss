@@ -1,0 +1,49 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// 将字体库放在 assets/fonts 文件夹下引入对应文件名即可
+// @font-face {
+//   font-family: 'your font';
+//   src: url('@/../assets/fonts/your_font');
+// }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: $fonts;
+  background: $root-bg;
+}
+
+body {
+  margin: 0 auto;
+}
+
+#app {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Global Styles Util
+.full-width {
+  width: 100% !important;
+}
+
+// Scroll Style
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 30px;
+}
