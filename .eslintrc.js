@@ -1,17 +1,14 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
-  extends: [
-    "plugin:vue/strongly-recommended",
-    "eslint:recommended"
-  ],
+  extends: ["plugin:vue/strongly-recommended", "eslint:recommended"],
   rules: {
-    'no-console': 'off',
-    'no-debugger': 'off'
+    "no-console": "off",
+    "no-debugger": "off",
   },
   parserOptions: {
-    parser: 'babel-eslint'
-  }
-}
+    parser: "babel-eslint",
+  },
+};

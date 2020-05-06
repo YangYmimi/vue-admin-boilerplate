@@ -5,6 +5,6 @@ export default [
   {
     path: "/",
     name: "SYSTEM-LOGIN-INDEX",
-    component: () => import("./login/index")
-  }
+    component: () => import("./login/index"),
+  },
 ];
