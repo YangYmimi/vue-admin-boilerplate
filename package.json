@@ -1,7 +1,7 @@
 {
-  "name": "upltv-admin-template",
+  "name": "VueAdminBoilerplate",
   "version": "1.0.0",
-  "description": "UPLTV Project By Vue, Project Template.",
+  "description": "",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

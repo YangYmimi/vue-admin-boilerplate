@@ -1,4 +1,4 @@
-# Vue Admin Template
+# Vue Admin Boilerplate
 
 一个 Vue 后台管理系统模板，立志做到最佳实践
 
