@@ -1,10 +1,11 @@
 // Generate url query to object
-export function generateQueryMap (queryStrs) {
+export function generateQueryMap(queryStrs) {
   let queryFormatted = {}
-  if (queryStrs) { // cur url params are not empty
-    const querySplited = queryStrs.split('&')
-    querySplited.forEach((item) => {
-      var element = item.split('=')
+  if (queryStrs) {
+    // cur url params are not empty
+    const querySplited = queryStrs.split("&")
+    querySplited.forEach(item => {
+      var element = item.split("=")
       queryFormatted[element[0]] = element[1]
     })
   }

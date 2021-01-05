@@ -42,3 +42,84 @@ et -c src/styles/element-variables.scss -o src/theme
 - 更新 vendor 下 cdn 的库
 
 系统采用 CDN 方式加载第三方库。`windows 系统` 下执行 `node vendor-update.js | bash` 对 `public/vendor/` 下第三方库进行更新。
+
+- 第三方库
+
+  * axios : API 请求
+
+  * lodash : 函数库，可以辅助数据处理
+
+  * dayjs : 日期格式化
+
+  * numeral : 数字格式化等
+
+  * echarts
+
+  * qs : URL 参数处理
+
+- vs-code 配置
+
+```User
+{
+  "prettier.endOfLine": "crlf",
+  "prettier.printWidth": 120,
+  "prettier.semi": false, // 句尾不添加分号
+  "prettier.trailingComma": "none", // 在对象或数组最后一个元素后面是否加逗号（在ES5中加尾逗号）
+  "prettier.arrowParens": "avoid", // (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
+  "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
+  "eslint.format.enable": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vetur.format.defaultFormatter.ts": "prettier-tslint",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.html": "prettier",
+  "autoimport.useSemiColon": false,
+  "editor.wordWrapColumn": 120,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.run": "onSave",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnType": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "explorer.confirmDelete": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}
+```
+
+```Workspace
+{
+  "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "prettier.arrowParens": "avoid",
+  "prettier.endOfLine": "crlf",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.formatOnSave": true
+}
+```

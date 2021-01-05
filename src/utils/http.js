@@ -1,7 +1,7 @@
-import axios from 'axios'
-import store from '@/store'
-import { Message } from 'element-ui'
-import { showLoading, closeLoading, increaseRequestCount, decreaseRequestCount } from './loading'
+import axios from "axios"
+import store from "@/store"
+import { Message } from "element-ui"
+import { showLoading, closeLoading, increaseRequestCount, decreaseRequestCount } from "./loading"
 
 const service = axios.create({
   baseURL: `${process.env.VUE_APP_APIBASEURL}`,
@@ -10,16 +10,17 @@ const service = axios.create({
 })
 
 service.interceptors.request.use(
-  (config) => {
-    if (!config.hideLoading) { // default show loading, some requests do not need loading
+  config => {
+    if (!config.hideLoading) {
+      // default show loading, some requests do not need loading
       showLoading()
     }
     increaseRequestCount()
 
-    config.headers['Authorization'] = `Bearer ${store.state.user.token}`
+    config.headers["Authorization"] = `Bearer ${store.state.user.token}`
     return config
   },
-  (error) => {
+  error => {
     decreaseRequestCount()
     closeLoading()
     Message.error({ message: error.message })
@@ -36,7 +37,7 @@ service.interceptors.request.use(
  *  }
  */
 service.interceptors.response.use(
-  (response) => {
+  response => {
     decreaseRequestCount()
     closeLoading()
     const data = response.data
@@ -47,7 +48,7 @@ service.interceptors.response.use(
         case 0:
           return resolve(data.data)
         case 401: // un authorization
-          window.UPLTV_VUE_INSTANCE.$router.push({ name: 'system-login' })
+          window.VUE_INSTANCE.$router.push({ name: "system-login" })
           break
         default:
           Message.error({
@@ -61,7 +62,7 @@ service.interceptors.response.use(
       return reject(data)
     })
   },
-  (error) => {
+  error => {
     decreaseRequestCount()
     closeLoading()
     Message.error({ message: error.message })
